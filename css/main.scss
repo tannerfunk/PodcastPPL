@@ -1,0 +1,356 @@
+
+
+body {
+    margin: 1.5em;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 1.5em;
+    line-height: 3.3rem;
+}
+
+.subhead {
+    font-size: 1.4rem;
+}
+
+.hero-img {
+    position: absolute;
+    filter: brightness(95%);
+    top: 0;
+    left: 0;
+    background: url("../images/headphones.jpg");
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: 20%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    // overflow: hidden;
+
+    animation: introLoad 2s forwards;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+}
+
+nav{
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: white;
+    height: 100vh;
+    width: 50%;
+    z-index: 999;
+    text-transform: uppercase;
+    transform : translateX(100%);
+    transition: transform .5s ease-in-out;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8em;
+
+        a {
+            color: black;
+            padding: .75em 2em;
+            display: block;
+
+            &:hover {
+                background: rgb(238, 238, 238);
+            }
+        }
+    }
+
+}
+
+.close {
+    float: right;
+    margin: 2em;
+    width: 2em;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    svg {
+        width: 2em;
+        margin-top: -.6em;
+        cursor: pointer;
+    }
+}
+
+section.hero {
+    color: white;
+    font-weight: bold;
+    height: 90vh;
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+
+    svg {
+        stroke: white;
+        position: absolute;
+        bottom: 5em;
+        width: 1em;
+        animation: moveArrow 1s alternate-reverse infinite;
+
+        path{
+            fill: white;
+        }
+    }
+}
+
+.more-info {
+    img {
+        width: 100%;
+        // this thing is the best thing ever
+        object-fit: cover;
+        height: 11em;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 1.25rem;
+        color: #404040
+    }
+
+    .desc {
+        line-height: 1.5rem;
+        color: #404040
+    }
+}
+
+
+.open-nav {
+    transform: translateX(0);
+}
+
+@media only screen and (min-width: 680px) {
+    body {
+        margin: 1.5em 5em;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+@media only screen and (min-width: 920px) {
+    .menu {
+        display: none;
+    }
+
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+
+        svg.close {
+            display: none;
+        }
+
+        ul {
+            // "display: flex;" on a parent container turns any child elements into columns
+            display: flex;
+            margin: 0;
+
+            a{
+                color: white;
+                padding: 0.5em 1.5em;
+                font-size: 0.9rem;
+
+                &:hover {
+                    background: none;
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
+
+
+
+    // .logo {
+    //     // color:#fcc7c6;
+    //     // color: #caece7;
+    //     color: black;
+        
+
+    //     span{
+    //         color: black;
+    //     }
+    // }
+
+    section.hero {
+
+        // height: auto;
+
+        // margin-bottom: 8em;
+
+        svg {
+            stroke: white;
+
+
+            path{
+                fill: white;
+            }
+        }
+    }
+
+
+    .feature {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 3em;
+        margin-bottom: 4em;
+
+        img{
+            width: 23em;
+            height: 15em;
+            border-radius: 10px;
+            margin-top: 2em;
+        }
+
+        .content {
+            text-align: left;
+            width: 25em;
+            background-color: #caebe5;
+            border-radius: 10px;
+            margin-top: 0em;
+            margin-bottom: 0em;
+            color: #404040;
+        }
+    }
+
+    .feature.left {
+        grid-template-areas:
+            "left right";
+
+        img {
+            grid-area: left;
+            border-radius: 10px;
+            margin-top: 4em;
+        }
+
+        .content {
+            text-align: left;
+            width: 25em;
+            justify-self: left;
+            background-color: #fcc6c5;
+            color: #404040;
+            margin-top: 0em;
+            margin-bottom: 0em;
+        }
+
+
+    }
+}
+
+.feature {
+    // display: flex;
+    // justify-content: center;
+    img {
+        border-radius: 10px;
+        margin-bottom: 0.5em;
+        justify-self: center;
+    }
+    .content {
+        background-color: #caebe5;
+        border-radius: 10px;
+        padding: 1em;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        justify-self: center;
+    }
+}
+.feature.left {
+    .content {
+        background-color: #fcc6c5;
+        justify-self: center;
+    }
+    img {
+        border-radius: 10px;
+    }
+}
+
+// really quick way of centering it at a size and not letting it grow
+@media only screen and (min-width: 1200px) {
+    .wrapper {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .feature {
+        gap: 0;
+    }
+}
+
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(-30px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-100px);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.signup {
+
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 14px 18px;
+    color: #616467;
+    box-shadow: inset 0 0 0 2px #616467;
+    background-color: transparent;
+    height: 48px;
+    :hover{
+        color: #fff;
+        background-color: #616467;
+    }
+
+}
