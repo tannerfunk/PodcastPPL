@@ -22,13 +22,13 @@ h1 {
 
 .subhead {
   font-size: 1.4rem;
-  margin-top: 0;
-  font-weight: 200;
+  margin-top: 0.75em;
+  font-weight: 700;
 }
 
 .hero-img {
   position: absolute;
-  filter: brightness(95%);
+  filter: brightness(90%);
   top: 0;
   left: 0;
   background: url("../images/headphones.jpg");
